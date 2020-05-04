@@ -1,0 +1,38 @@
+<!-- href="Vcomentarios.php?id=<?php echo $post['post_id'] ?>"-->
+
+
+#Crear Post
+    <div class="row justify-content-center my-3">
+        <div class="col-md-4 my-2">
+            <a href="crearPost.php" class="btn btn-outline-danger btn-block"> Crear Post </a>
+            <?php if(isset($_SESSION['post_created'])){  ?>
+                <div class="alert alert-success alert-dismissible fade show my-2" role="alert">
+                        <?= $_SESSION['post_created'] ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+            <?php session_unset();} ?>
+        </div>
+    </div>
+
+#NAVBAR USUARIO
+<?php 
+include 'includes/header.php';
+include 'includes/navBarUsuario.php'
+?>
+
+
+<?php include 'includes/footer.php'; ?>
+#NAVBAR NORMAL
+    <?php include 'includes/header.php';
+          include 'includes/navBar.php'
+           ?>
+    <?php include 'includes/footer.php'; ?>
+
+#INSERTAR AUTOR
+http://localhost/phpmyadmin/tbl_sql.php?db=blogevaluacion&table=autores
+
+
+#Link Comentarios
+<a href="Vcomentarios.php?id=<?php echo $post['id_post'] ?>" class="btn btn-outline-dark btn-block"> Comentar </a>
